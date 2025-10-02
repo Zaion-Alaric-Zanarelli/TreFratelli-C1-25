@@ -29,7 +29,7 @@ Tre etichette principali:
 ---
 
 ## 📍 Localizzazione
-**Indirizzo:** Via S. Stefano, 15 — 23037 Tirano (SO), Italia  
+**Indirizzo:** Via S. Stefano, 55 — 28087 Tirano (SO), Italia  
 Nel cuore della Valtellina, circondata da vigneti terrazzati e montagne alpine.
 
 ---
