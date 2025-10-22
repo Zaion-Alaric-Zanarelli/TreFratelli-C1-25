@@ -28,6 +28,13 @@ header {
   padding: 0 16px;
 }
 
+nav {
+  display: flex;
+  max-width: 980px;
+  padding: 0 16px;
+  gap: 20px;
+}
+
 nav ul {
   display: flex;
   gap: 16px;
@@ -35,6 +42,7 @@ nav ul {
   padding: 12px 0;
   margin: 0;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 nav a {
@@ -99,4 +107,30 @@ footer {
   display: block;
   height: 60px;
   margin-top: -60px;
+}
+
+.carousel-item{
+  overflow: hidden;
+}
+
+@media (orientation: landscape) {
+  .carousel-item{
+    max-height: 80vh;
+  }
+
+  .carousel-item .img-alta{
+    position: relative !important;
+    bottom: 35vh !important;
+  }
+}
+
+@media (orientation: portrait) {
+  .carousel-item{
+    max-height: 60vh;
+  }
+
+  .carousel-item .img-alta{
+    position: relative !important;
+    bottom: 20vh !important;
+  }
 }
