@@ -5,6 +5,7 @@
   --line: #e6ddd2;
 }
 
+
 html,
 body {
   margin: 0;
@@ -20,6 +21,31 @@ header {
   background: #fff;
   border-bottom: 1px solid var(--line);
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+nav ul li{
+  color: var(--accent);
+}
+
+.dropdown-toggle{
+  transition: 0.4s;
+}
+
+.dropdown {
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.dropdown:hover {
+  color: var(--accent);
+}
+
+.rotate{
+  transform: rotateX(180deg);
 }
 
 .wrap {
@@ -95,10 +121,10 @@ figure {
   color: #6b6058;
 }
 
-footer {
-  text-align: center;
-  padding: 24px 0;
-  font-size: 0.95rem;
+footer { 
+  text-align: center; 
+  padding: 24px 0; 
+  font-size: 0.95rem; 
 }
 
 /* piccole ancore interne per compensare l'intestazione sticky */

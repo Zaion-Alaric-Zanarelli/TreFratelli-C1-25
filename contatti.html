@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti & Posizione</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+
+    <script src="app.js" defer></script>
 </head>
 <body>
   <header>
@@ -13,38 +23,140 @@
       <nav aria-label="Navigazione principale">
         <ul>
           <li style="font-size: 26px;"><a><b>Tre Fratelli</b></a></li>
-          <li><a href="index.html">Storia</a></li>
-          <li><a href="vini.html">Vini</a></li>
-          <li><a href="ristorante.html">Ristorante</a></li>
-          <li><a href="galleria.html">Galleria</a></li>
-          <li><a href="contatti.html">Contatti & Posizione</a></li>
+          <li><a href="index.html" id="link_a">Storia</a></li>
+          <li><a href="vini.html" id="link_b">Vini</a></li>
+          <li><a href="ristorante.html" id="link_c">Ristorante</a></li>
+          <li><a href="galleria.html" id="link_d">Galleria</a></li>
+          <li><a href="contatti.html" id="link_e">Contatti & Posizione</a></li>
         </ul>
       </nav>
     </div>
+  
+    <div class="dropdown">
+      <a class="nav-link nav-link-b d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <p id="traduzione">Traduzione</p> <i class="ph ph-translate"></i> <p class="dropdown-toggle dropdown-toggle-b ms-2 mt-1"></p>
+      </a>
+      <ul class="dropdown-menu" id="trasition">
+        <li><a class="dropdown-item" href="#" onclick="setLanguage('it')" id="it">Italiano</a></li>
+        <li><a class="dropdown-item" onclick="setLanguage('en_uk')" id="en_uk">Inglese</a></li>
+      </ul>
+    </div>
   </header>
 
-    <main class="wrap">
-      <section id="contatti">
-        <h2>Contatti</h2>
-        <!-- Semplice sezione contatti senza backend -->
-        <p>Email: <a href="mailto:info@trefratelli.example">info@trefratelli.example</a> · Telefono: +39 000 000 000</p>
-        <p class="muted">Orari indicativi: Gio–Lun 12:00–15:00 / 19:00–22:00 · Mar–Mer chiuso.</p>
-      </section>
-    </main>
+  <main class="wrap">
+    <section id="contatti">
+      <h2 id="con">Contatti</h2>
+      <p id="email">Email: <a href="mailto:info@trefratelli.example">info@trefratelli.example</a> · Telefono: +39 000 000 000</p>
+      <p class="muted" id="testo_a">Orari indicativi: Gio–Lun 12:00–15:00 / 19:00–22:00 · Mar–Mer chiuso.</p>
+    </section>
 
-    <main class="wrap">
-      <section id="dove-siamo">
-        <h2>Dove siamo</h2>
-        <p><strong>Indirizzo:</strong> Via S. Stefano, 55 — 28087 Tirano (SO), Italia</p>
-        <p class="muted">A due passi dal centro storico e dai terrazzamenti. Parcheggio limitato in loco.</p>
-      </section>
-    </main>
+    <section id="dove-siamo">
+      <h2 id="dove">Dove siamo</h2>
+      <p id="testo_b"><strong>Indirizzo:</strong> Via S. Stefano, 55 — 28087 Tirano (SO), Italia</p>
+      <p class="muted" id="testo_c">A due passi dal centro storico e dai terrazzamenti. Parcheggio limitato in loco.</p>
+    </section>
+  </main>
 
   <footer>
     <!-- Nota legale e crediti in linguaggio semplice -->
     <div class="wrap">
-      <p>© 2025 Cantina e Ristorante Tre Fratelli · Sito dimostrativo non commerciale.</p>
+      <p>© 2025 <span id="footer_a">Cantina e Ristorante Tre Fratelli</span> · <span id="footer">Sito dimostrativo non commerciale.</span></p>
     </div>
   </footer>
+
+<script>
+  const i18n = {
+    it: {
+      link_a: "Storia",
+      link_b: "Vini",
+      link_c: "Ristorante",
+      link_d: "Galleria",
+      link_e: "Contatti & Posizione",
+      traduzione: "Traduzione",
+      it: "Italiano",
+      en_uk: "Inglese-UK",
+      con: "Contatti",
+      email: "Email: <a href='mailto:info@trefratelli.example'>info@trefratelli.example</a> · Telefono: +39 000 000 000",
+      testo_a: "Orari indicativi: Gio–Lun 12:00–15:00 / 19:00–22:00 · Mar–Mer chiuso.",
+      dove: "Dove siamo",
+      testo_b: "<strong>Indirizzo:</strong> Via S. Stefano, 55 — 28087 Tirano (SO), Italia",
+      testo_c: "A due passi dal centro storico e dai terrazzamenti. Parcheggio limitato in loco.",
+      footer: "Sito dimostrativo non commerciale.",
+      footer_a: "Cantina e Ristorante Tre Fratelli"
+    },
+    en_uk: {
+      link_a: "Story",
+      link_b: "Wines",
+      link_c: "Restaurant",
+      link_d: "Gallery",
+      link_e: "Contacts & Location",
+      traduzione: "Translation",
+      it: "Italian",
+      en_uk: "English-UK",
+      con: "Contacts",
+      email: "Email: <a href='mailto:info@trefratelli.example'>info@trefratelli.example</a> · Phone: +39 000 000 000",
+      testo_a: "Indicative hours: Thu–Mon 12:00–15:00 / 19:00–22:00 · Tue–Wed closed.",
+      dove: "Where we are",
+      testo_b: "<strong>Address:</strong> Via S. Stefano, 55 — 28087 Tirano (SO), Italy",
+      testo_c: "A short walk from the historic centre and the terraces. Limited parking available on site.",
+      footer: "Demonstration website — non-commercial use only.",
+      footer_a: "Tre Fratelli Winery and Restaurant"
+    }
+  };
+
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll('[id]');
+    const translations = i18n[lang];
+
+    elements.forEach(el => {
+      const key = el.id;
+      if (translations[key]) {
+        // Mantiene i tag HTML interni
+        if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
+          el.innerHTML = translations[key];
+        } else {
+          el.textContent = translations[key];
+        }
+      }
+    });
+
+    // Salva la lingua scelta nel browser
+    localStorage.setItem('lang', lang);
+  }
+
+  // Imposta la lingua salvata o di default (italiano)
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('lang') || 'it';
+    setLanguage(savedLang);
+  });
+</script>
+
+<style>
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+
+footer {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.95rem;
+}
+
+footer .wrap {
+  border-top: 1px solid var(--line);
+  padding-top: 24px; /* pra dar o mesmo respiro depois da linha */
+}
+
+</style>
+
 </body>
 </html>

@@ -1,67 +1,156 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <title>Galleria</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galleria</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+
+  <script src="app.js" defer></script>
 </head>
+
 <body>
   <header>
     <div>
-      <!-- Menu con ancore interne alla stessa pagina -->
+      <!-- Menu principale -->
       <nav aria-label="Navigazione principale">
         <ul>
           <li style="font-size: 26px;"><a><b>Tre Fratelli</b></a></li>
-          <li><a href="i">Storia</a></li>
-          <li><a href="vini.html">Vini</a></li>
-          <li><a href="ristorante.html">Ristorante</a></li>
-          <li><a href="#galleria">Galleria</a></li>
-          <li><a href="contatti.html">Contatti & Posizione</a></li>
+          <li><a href="index.html" id="link_a">Storia</a></li>
+          <li><a href="vini.html" id="link_b">Vini</a></li>
+          <li><a href="ristorante.html" id="link_c">Ristorante</a></li>
+          <li><a href="galleria.html" id="link_d">Galleria</a></li>
+          <li><a href="contatti.html" id="link_e">Contatti & Posizione</a></li>
         </ul>
       </nav>
     </div>
+
+    <!-- Dropdown di traduzione -->
+    <div class="dropdown">
+      <a class="nav-link nav-link-b d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <p id="traduzione">Traduzione</p>
+        <i class="ph ph-translate"></i>
+        <p class="dropdown-toggle dropdown-toggle-b ms-2 mt-1"></p>
+      </a>
+      <ul class="dropdown-menu" id="trasition">
+        <li><a class="dropdown-item" href="#" onclick="setLanguage('it')" id="it">Italiano</a></li>
+        <li><a class="dropdown-item" href="#" onclick="setLanguage('en_uk')" id="en_uk">Inglese-UK</a></li>
+      </ul>
+    </div>
   </header>
+
   <main class="wrap">
     <section id="galleria">
-      <h2>Galleria</h2>
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="immagini/bottiglie.png" class="d-block w-100 img-alta" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="immagini/cantina.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="immagini/facciata.png" class="d-block w-100 img-alta" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="immagini/proprieta.png" class="d-block w-100" alt="...">
-            </div>
+      <h2 id="gal_title">Galleria</h2>
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="immagini/bottiglie.png" class="d-block w-100 img-alta" alt="Tre bottiglie di vino allineate">
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <div class="carousel-item">
+            <img src="immagini/cantina.png" class="d-block w-100" alt="Interno della cantina in pietra">
+          </div>
+          <div class="carousel-item">
+            <img src="immagini/facciata.png" class="d-block w-100 img-alta" alt="Facciata del ristorante Tre Fratelli">
+          </div>
+          <div class="carousel-item">
+            <img src="immagini/proprieta.png" class="d-block w-100" alt="Vista della proprietà e dei vigneti">
+          </div>
         </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden" id="prev_btn">Precedente</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden" id="next_btn">Successivo</span>
+        </button>
+      </div>
     </section>
   </main>
 
-
   <footer>
-    <!-- Nota legale e crediti in linguaggio semplice -->
     <div class="wrap">
-      <p>© 2025 Cantina e Ristorante Tre Fratelli · Sito dimostrativo non commerciale.</p>
+      <p>© 2025 <span id="footer_a">Cantina e Ristorante Tre Fratelli</span> ·
+      <span id="footer">Sito dimostrativo non commerciale.</span></p>
     </div>
   </footer>
+
+  <script>
+    // Traduzioni
+    const i18n = {
+      it: {
+        link_a: "Storia",
+        link_b: "Vini",
+        link_c: "Ristorante",
+        link_d: "Galleria",
+        link_e: "Contatti & Posizione",
+        traduzione: "Traduzione",
+        it: "Italiano",
+        en_uk: "Inglese-UK",
+
+        gal_title: "Galleria",
+        prev_btn: "Precedente",
+        next_btn: "Successivo",
+
+        footer: "Sito dimostrativo non commerciale.",
+        footer_a: "Cantina e Ristorante Tre Fratelli"
+      },
+
+      en_uk: {
+        link_a: "Story",
+        link_b: "Wines",
+        link_c: "Restaurant",
+        link_d: "Gallery",
+        link_e: "Contacts & Location",
+        traduzione: "Translation",
+        it: "Italian",
+        en_uk: "English-UK",
+
+        gal_title: "Gallery",
+        prev_btn: "Previous",
+        next_btn: "Next",
+
+        footer: "Demonstration website — non-commercial use only.",
+        footer_a: "Tre Fratelli Winery and Restaurant"
+      }
+    };
+
+    // Funzione per impostare la lingua
+    function setLanguage(lang) {
+      const elements = document.querySelectorAll('[id]');
+      const translations = i18n[lang];
+
+      elements.forEach(el => {
+        const key = el.id;
+        if (translations[key]) {
+          if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
+            el.innerHTML = translations[key];
+          } else {
+            el.textContent = translations[key];
+          }
+        }
+      });
+
+      localStorage.setItem('lang', lang);
+    }
+
+    // Imposta lingua iniziale
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('lang') || 'it';
+      setLanguage(savedLang);
+    });
+  </script>
 </body>
 </html>

@@ -6,7 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css">
   <title>Cantina e Ristorante Tre Fratelli — Tirano, Valtellina</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+
+  <script src="app.js" defer></script>
 </head>
 
 <body>
@@ -16,13 +25,22 @@
       <nav aria-label="Navigazione principale">
         <ul>
           <li style="font-size: 26px;"><a><b>Tre Fratelli</b></a></li>
-          <li><a href="#storia">Storia</a></li>
-          <li><a href="vini.html">Vini</a></li>
-          <li><a href="ristorante.html">Ristorante</a></li>
-          <li><a href="galleria.html">Galleria</a></li>
-          <li><a href="contatti.html">Contatti & Posizione</a></li>
+          <li><a href="#storia" id="link_a">Storia</a></li>
+          <li><a href="vini.html" id="link_b">Vini</a></li>
+          <li><a href="ristorante.html" id="link_c">Ristorante</a></li>
+          <li><a href="galleria.html" id="link_d">Galleria</a></li>
+          <li><a href="contatti.html" id="link_e">Contatti & Posizione</a></li>
         </ul>
       </nav>
+    </div>
+
+    <div class="dropdown">
+      <a class="nav-link nav-link-b d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <p id="traduzione">Traduzione</p> <i class="ph ph-translate"></i> <p class="dropdown-toggle dropdown-toggle-b ms-2 mt-1"></p>
+      </a>
+      <ul class="dropdown-menu" id="trasition">
+        <li><a class="dropdown-item" href="#" onclick="setLanguage('it')" id="it">Italiano</a></li>
+        <li><a class="dropdown-item" href="#" onclick="setLanguage('en_uk')" id="en_uk">Inglese</a></li>
+      </ul>
     </div>
   </header>
 
@@ -31,27 +49,27 @@
     <section id="home" class="hero">
       <!-- Foto della proprietà (Valtellina) -->
       <figure><img src="immagini/proprieta.png" alt="Vigneti terrazzati con le Alpi sullo sfondo, Tirano"> </figure>
-      <h1>Cantina e Ristorante Tre Fratelli</h1>
-      <p class="muted">Quattro generazioni di famiglia, tra i muretti a secco della Valtellina e i profumi della cucina
+      <h1 id="titolo">Cantina e Ristorante Tre Fratelli</h1>
+      <p class="muted" id="cantina">Quattro generazioni di famiglia, tra i muretti a secco della Valtellina e i profumi della cucina
         di montagna.</p>
-      <h1>La cantina</h1>
-      <p class="muted">Piccola, essenziale, scavata nella pietra. Fermentazioni controllate, affinamento in botti di rovere e riposo
+      <h1 id="cantina_a">La cantina</h1>
+      <p class="muted" id="cantina_b">Piccola, essenziale, scavata nella pietra. Fermentazioni controllate, affinamento in botti di rovere e riposo
           lungo: la montagna chiede tempo e noi lo rispettiamo.</p>
     </section>
 
     <section id="storia">
-      <h2>La nostra storia</h2>
+      <h2 id="storia_a">La nostra storia</h2>
       <!-- Testo breve in italiano sul racconto della cantina -->
       <div class="grid two">
         <div class="card">
-          <p>La <strong>Tre Fratelli</strong> affonda le sue radici nel 1925, quando Giovanni decise di coltivare la
+          <p id="testo">La <strong>Tre Fratelli</strong> affonda le sue radici nel 1925, quando Giovanni decise di coltivare la
             <em>Chiavennasca</em> — il Nebbiolo di montagna — sui terrazzamenti che guardano Tirano. Tra crisi
             economiche, guerra e rinascita del turismo alpino, la famiglia ha custodito una tradizione semplice:
             <em>vino, ospitalità, lavoro di pietra e pazienza</em>.</p>
-          <p>Negli anni difficili, le botti furono protette in una piccola “cantina segreta” scavata nella roccia; negli
+          <p id="testo_a">Negli anni difficili, le botti furono protette in una piccola “cantina segreta” scavata nella roccia; negli
             anni della ripresa, i nipoti hanno unito sapere contadino e studio enologico, senza mai abbandonare i
             muretti a secco che tengono il monte.</p>
-          <p>Oggi, la quarta generazione porta avanti la casa con la stessa idea: <strong>buon vino con buona
+          <p id="testo_b">Oggi, la quarta generazione porta avanti la casa con la stessa idea: <strong>buon vino con buona
               cucina</strong>, in un luogo che profuma di legno, pane e valle.</p>
         </div>
         <figure class="card"><img src="immagini/cantina.png" alt="Botti in legno sotto volte in mattoni nella cantina" style="width:100%; height:auto; border-radius:8px;"></figure>
@@ -63,9 +81,82 @@
   <footer>
     <!-- Nota legale e crediti in linguaggio semplice -->
     <div class="wrap">
-      <p>© 2025 Cantina e Ristorante Tre Fratelli · Sito dimostrativo non commerciale.</p>
+      <p>© 2025 <span id="footer_a">Cantina e Ristorante Tre Fratelli</span> · <span id="footer">Sito dimostrativo non commerciale.</span></p>
     </div>
   </footer>
+
+  <script>
+  // traduzione
+  const i18n = {
+    it: {
+      link_a: "Storia",
+      link_b: "Vini",
+      link_c: "Ristorante",
+      link_d: "Galleria",
+      link_e: "Contatti & Posizione",
+      traduzione: "Traduzione",
+      it: "Italiano",
+      en_uk: "Inglese-UK",
+      titolo: "Cantina e Ristorante Tre Fratelli",
+      cantina: "Quattro generazioni di famiglia, tra i muretti a secco della Valtellina e i profumi della cucina di montagna.",
+      cantina_a: "La cantina",
+      cantina_b: "Piccola, essenziale, scavata nella pietra. Fermentazioni controllate, affinamento in botti di rovere e riposo lungo: la montagna chiede tempo e noi lo rispettiamo.",
+      storia_a: "La nostra storia",
+      testo: "La <strong>Tre Fratelli</strong> affonda le sue radici nel 1925, quando Giovanni decise di coltivare la <em>Chiavennasca</em> — il Nebbiolo di montagna — sui terrazzamenti che guardano Tirano. Tra crisi economiche, guerra e rinascita del turismo alpino, la famiglia ha custodito una tradizione semplice: <em>vino, ospitalità, lavoro di pietra e pazienza</em>.",
+      testo_a: "Negli anni difficili, le botti furono protette in una piccola “cantina segreta” scavata nella roccia; neglianni della ripresa, i nipoti hanno unito sapere contadino e studio enologico, senza mai abbandonare imuretti a secco che tengono il monte.",
+      testo_b: "Oggi, la quarta generazione porta avanti la casa con la stessa idea: <strong>buon vino con buona cucina</strong>, in un luogo che profuma di legno, pane e valle.",
+      footer: "Sito dimostrativo non commerciale.",
+      footer_a: "Cantina e Ristorante Tre Fratelli"
+    },
+    en_uk: {
+      link_a: "Story",
+      link_b: "Wines",
+      link_c: "Restaurant",
+      link_d: "Gallery",
+      link_e: "Contacts & Location",
+      traduzione: "Translation",
+      it: "Italian",
+      en_uk: "English-UK",
+      titolo: "Tre Fratelli Winery and Restaurant",
+      cantina: "Four generations of family, among the dry-stone walls of Valtellina and the aromas of mountain cuisine.",
+      cantina_a: "The Cellar",
+      cantina_b: "Small, essential, carved into the rock. Controlled fermentations, oak barrel ageing and long resting: the mountain demands time, and we respect it.",
+      storia_a: "Our Story",
+      testo: "<strong>Tre Fratelli</strong> traces its roots back to 1925, when Giovanni decided to cultivate <em>Chiavennasca</em> — the mountain Nebbiolo — on the terraces overlooking Tirano. Through economic crises, war and the rebirth of alpine tourism, the family has preserved a simple tradition: <em>wine, hospitality, craftsmanship and patience</em>.",
+      testo_a: "In difficult years, the barrels were safeguarded in a small “secret cellar” carved into the rock; in the years of recovery, the grandchildren combined rural know-how and oenological study, never abandoning the dry-stone walls that hold the mountain together.",
+      testo_b: "Today, the fourth generation carries the house forward with the same idea: <strong>good wine with good food</strong>, in a place scented with wood, bread and valley air.",
+      footer: "Demonstration website — non-commercial use only.",
+      footer_a: "Tre Fratelli Winery and Restaurant"
+    }
+  }
+
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll('[id]');
+    const translations = i18n[lang];
+
+    elements.forEach(el => {
+      const key = el.id;
+      if (translations[key]) {
+        // se il testo contiene tag HTML, mantienile
+        if (/<\/?[a-z][\s\S]*>/i.test(translations[key])) {
+          el.innerHTML = translations[key];
+        } else {
+          el.textContent = translations[key];
+        }
+      }
+    });
+
+    // salva la lingua corrente nel browser
+    localStorage.setItem('lang', lang);
+  }
+
+  // imposta la lingua iniziale (l'ultima usata oppure l'italiano come predefinita)
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('lang') || 'it';
+    setLanguage(savedLang);
+  });
+
+  </script>
 </body>
 
 </html>
