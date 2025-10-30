@@ -14,4 +14,3 @@ document.addEventListener('click', (e) => {
         dropdown_toggle.classList.remove('rotate');
     }
 });
-

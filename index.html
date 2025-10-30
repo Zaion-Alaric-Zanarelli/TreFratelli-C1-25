@@ -46,30 +46,34 @@
 
   <main class="wrap">
     <!-- Sezione Eroe con immagine della proprietà -->
-    <section id="home" class="hero">
-      <!-- Foto della proprietà (Valtellina) -->
-      <figure><img src="immagini/proprieta.png" alt="Vigneti terrazzati con le Alpi sullo sfondo, Tirano"> </figure>
-      <h1 id="titolo">Cantina e Ristorante Tre Fratelli</h1>
-      <p class="muted" id="cantina">Quattro generazioni di famiglia, tra i muretti a secco della Valtellina e i profumi della cucina
-        di montagna.</p>
-      <h1 id="cantina_a">La cantina</h1>
-      <p class="muted" id="cantina_b">Piccola, essenziale, scavata nella pietra. Fermentazioni controllate, affinamento in botti di rovere e riposo
+    <section id="home" class="hero" style="display: flex;">
+      <div class="grid two">
+        <!-- Foto della proprietà (Valtellina) -->
+        <figure class="card"><img src="immagini/proprieta.png" alt="Vigneti terrazzati con le Alpi sullo sfondo, Tirano"> </figure>
+        <div class="card" style="padding-left: 45px;">
+          <h1 id="titolo" style="font-size: 45px;">Cantina e Ristorante Tre Fratelli</h1>
+          <p class="muted" id="cantina" style="font-size: 20px;">Quattro generazioni di famiglia, tra i muretti a secco della Valtellina e i profumi della cucina
+            di montagna.</p>
+          <h1 id="cantina_a" style="font-size: 45px;">La cantina</h1>
+          <p class="muted" id="cantina_b" style="font-size: 20px;">Piccola, essenziale, scavata nella pietra. Fermentazioni controllate, affinamento in botti di rovere e riposo
           lungo: la montagna chiede tempo e noi lo rispettiamo.</p>
+        </div>
+      </div>
     </section>
 
     <section id="storia">
-      <h2 id="storia_a">La nostra storia</h2>
+      <h2 id="storia_a" style="font-size: 40px;">La nostra storia</h2>
       <!-- Testo breve in italiano sul racconto della cantina -->
       <div class="grid two">
         <div class="card">
-          <p id="testo">La <strong>Tre Fratelli</strong> affonda le sue radici nel 1925, quando Giovanni decise di coltivare la
+          <p id="testo" style="font-size: 20px;">La <strong>Tre Fratelli</strong> affonda le sue radici nel 1925, quando Giovanni decise di coltivare la
             <em>Chiavennasca</em> — il Nebbiolo di montagna — sui terrazzamenti che guardano Tirano. Tra crisi
             economiche, guerra e rinascita del turismo alpino, la famiglia ha custodito una tradizione semplice:
             <em>vino, ospitalità, lavoro di pietra e pazienza</em>.</p>
-          <p id="testo_a">Negli anni difficili, le botti furono protette in una piccola “cantina segreta” scavata nella roccia; negli
+          <p id="testo_a" style="font-size: 20px;">Negli anni difficili, le botti furono protette in una piccola “cantina segreta” scavata nella roccia; negli
             anni della ripresa, i nipoti hanno unito sapere contadino e studio enologico, senza mai abbandonare i
             muretti a secco che tengono il monte.</p>
-          <p id="testo_b">Oggi, la quarta generazione porta avanti la casa con la stessa idea: <strong>buon vino con buona
+          <p id="testo_b" style="font-size: 20px;">Oggi, la quarta generazione porta avanti la casa con la stessa idea: <strong>buon vino con buona
               cucina</strong>, in un luogo che profuma di legno, pane e valle.</p>
         </div>
         <figure class="card"><img src="immagini/cantina.png" alt="Botti in legno sotto volte in mattoni nella cantina" style="width:100%; height:auto; border-radius:8px;"></figure>

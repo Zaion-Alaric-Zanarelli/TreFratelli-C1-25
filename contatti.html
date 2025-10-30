@@ -42,7 +42,7 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main class="wrap-main">
     <section id="contatti">
       <h2 id="con">Contatti</h2>
       <p id="email">Email: <a href="mailto:info@trefratelli.example">info@trefratelli.example</a> · Telefono: +39 000 000 000</p>
@@ -153,7 +153,15 @@ footer {
 
 footer .wrap {
   border-top: 1px solid var(--line);
-  padding-top: 24px; /* pra dar o mesmo respiro depois da linha */
+  padding-top: 24px;
+}
+
+.wrap-main {
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
 }
 
 </style>
