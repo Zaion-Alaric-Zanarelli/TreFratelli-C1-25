@@ -1,10 +1,17 @@
 :root {
-  --bg: #faf7f2;
-  --ink: #332d29;
-  --accent: #7a4f2a;
-  --line: #e6ddd2;
+  --bg: #F3EDE3;
+  --secondary-bg: #5B0F0F;
+  --ink: #2C2420;         
+  --accent: #B88A44;      
+  --line: #D8C7B1;        
+  --light-text: #FAF7F0;  
+  --accent-hover: #D4A857; 
 }
 
+
+/* ---------------------------------------------------------- */
+/* STRUTTURA DI BASE */
+/* ---------------------------------------------------------- */
 
 html,
 body {
@@ -15,10 +22,14 @@ body {
   color: var(--ink);
 }
 
+/* ---------------------------------------------------------- */
+/* HEADER E NAVBAR */
+/* ---------------------------------------------------------- */
+
 header {
   position: sticky;
   top: 0;
-  background: #fff;
+  background: var(--secondary-bg);
   border-bottom: 1px solid var(--line);
   z-index: 10;
   display: flex;
@@ -26,33 +37,50 @@ header {
   align-items: center;
 }
 
-
-nav ul li{
+/* colore del testo nei menu */
+nav ul li {
   color: var(--accent);
 }
 
-.dropdown-toggle{
+.dropdown-toggle {
   transition: 0.4s;
 }
 
+/* margine corretto per il menu a discesa */
 .dropdown {
   margin-right: 30px;
   margin-top: 20px;
 }
 
+/* effetto hover sul dropdown */
 .dropdown:hover {
-  color: var(--accent);
+  color: var(--accent) !important;
 }
 
-.rotate{
+/* icona che ruota nei menu */
+.rotate {
   transform: rotateX(180deg);
 }
 
-.dropdown-item:active,
-.dropdown-item:focus{
-  background-color: var(--line) !important;
-  color: var(--ink) !important;
+/* link di navigazione principali */
+.nav-link {
+  color: var(--accent) !important;
 }
+
+.nav-link:hover {
+  color: var(--accent-hover) !important;
+}
+
+/* colore quando l’elemento del menu è attivo */
+.dropdown-item:active,
+.dropdown-item:focus {
+  background-color: var(--accent) !important;
+  color: black !important;
+}
+
+/* ---------------------------------------------------------- */
+/* LAYOUT GENERALE */
+/* ---------------------------------------------------------- */
 
 .wrap {
   max-width: 1500px;
@@ -83,9 +111,14 @@ nav a {
   font-weight: 600;
 }
 
+/* ---------------------------------------------------------- */
+/* TITOLI E SEZIONI */
+/* ---------------------------------------------------------- */
+
 h1,
 h2 {
   line-height: 1.2;
+  color: var(--secondary-bg); /* rende i titoli coerenti col vino */
 }
 
 section {
@@ -96,6 +129,10 @@ section {
 figure {
   margin: 0;
 }
+
+/* ---------------------------------------------------------- */
+/* IMMAGINI E CARD */
+/* ---------------------------------------------------------- */
 
 .hero img {
   width: 100%;
@@ -117,6 +154,7 @@ figure {
   }
 }
 
+/* struttura delle card */
 .grid.two .card {
   display: flex;
   flex-direction: column;
@@ -129,19 +167,26 @@ figure {
   border-radius: 10px;
   padding: 16px;
   box-shadow: -12px 17px 20px -4px rgba(124,124,124,0.75);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* transizione morbida */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-text {
+  padding: 30px 50px;
 }
 
 /* effetto al passaggio del mouse */
-.card:hover {
-  transform: scale(1.03); /* ingrandisce leggermente la card */
-  box-shadow: -12px 22px 28px -4px rgba(124,124,124,0.65); /* ombra un po’ più intensa */
+.card-img:hover {
+  transform: scale(1.03);
+  box-shadow: -12px 22px 28px -4px rgba(124,124,124,0.65);
 }
-
 
 .muted {
   color: #6b6058;
 }
+
+/* ---------------------------------------------------------- */
+/* FOOTER */
+/* ---------------------------------------------------------- */
 
 footer { 
   text-align: center; 
@@ -149,7 +194,10 @@ footer {
   font-size: 0.95rem; 
 }
 
-/* piccole ancore interne per compensare l'intestazione sticky */
+/* ---------------------------------------------------------- */
+/* ANCORE INTERNE (PER HEADER STICKY) */
+/* ---------------------------------------------------------- */
+
 :target::before {
   content: "";
   display: block;
@@ -157,19 +205,22 @@ footer {
   margin-top: -60px;
 }
 
-.carousel-item{
+/* ---------------------------------------------------------- */
+/* CAROUSEL E GALLERIA */
+/* ---------------------------------------------------------- */
+
+.carousel-item {
   overflow: hidden;
 }
 
 @media (orientation: landscape) {
-  #galleria{
+  #galleria {
     padding: 50px 400px !important;
   }
 }
 
 @media (orientation: portrait) {
-  #galleria{
+  #galleria {
     padding: 10px 0 !important;
   }
 }
-
