@@ -1,0 +1,44 @@
+/*  IMPOSTAZIONI GENERALI DELLA PAGINA*/
+* {
+    padding: 0; /* Remove o espaçamento interno padrão de todos os elementos */
+    margin: 0; /* Remove o espaçamento externo padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui bordas e padding no cálculo total da largura/altura */
+    font-family: 'Times New Roman', Times, serif; /* Define a fonte padrão */
+}
+
+/*  ELEMENTI DEL MENU DI NAVIGAZIONE */
+.nav-item {
+    padding: 10px; /* Adiciona espaço interno em cada item do menu */
+}
+
+/*BARRA DI NAVIGAZIONE */
+nav {
+    background-color: #1e3c37; /* Define a cor de fundo da barra */
+    color: white !important; /* Define a cor do texto como branco */
+}
+
+/*    LINK ATTIVI O SELEZIONATI*/
+.active {
+    cursor: default; /* Impede que o cursor mude ao passar sobre o item ativo */
+}
+
+/*  ELEMENTI ATTIVI DEL MENU A DISCESA*/
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #1e3c37 !important; /* Fundo do item ativo igual ao da barra */
+    color: #fff !important; /* Texto branco */
+}
+
+/* MENU A DISCESA (DROPDOWN) */
+.dropdown-menu {
+    background: rgba(255, 255, 255, 0.6) !important; /* Fundo branco semitransparente */
+    backdrop-filter: blur(12px); /* Aplica efeito de desfoque no fundo */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidade com navegadores WebKit */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda levemente visível */
+}
+
+/*   STILE DEL FONT CINZEL */
+.font {
+    font-family: 'Cinzel', serif; /* Define a fonte Cinzel */
+    font-variant: small-caps; /* Usa letras pequenas em formato de maiúsculas */
+}
