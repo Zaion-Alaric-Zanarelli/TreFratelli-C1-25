@@ -82,6 +82,7 @@ nav ul li {
 /* LAYOUT GENERALE */
 /* ---------------------------------------------------------- */
 
+
 .wrap {
   max-width: 1500px;
   margin: 0 auto;
@@ -223,4 +224,42 @@ footer {
   #galleria {
     padding: 10px 0 !important;
   }
+}
+
+/* ---------------------------------------------------------- */
+/* SEZIONE STORIA — immagine di sfondo a tutta larghezza */
+/* ---------------------------------------------------------- */
+
+.storia {
+  margin: 40px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("immagini/cantina.png") center/cover no-repeat;
+  text-align: center;
+  padding: 100px 0;
+  border: none;
+  overflow: hidden;
+}
+
+.storia .grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.storia .card-text {
+  background: rgba(56, 56, 56, 0.55);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(58, 58, 58, 0.4);
+  color: #fff;
 }
