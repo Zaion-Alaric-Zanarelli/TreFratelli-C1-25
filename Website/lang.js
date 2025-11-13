@@ -36,7 +36,15 @@ const TRANSLATIONS = {
     menuItem3: "Pizzoccheri",
     menuItem4: "Torta rustica",
     galleryTitle: "Galleria",
-    footerText: "© 2025 Tre Fratelli — Tirano. Tutti i diritti riservati."
+    footerLinks: "Link utili",
+    navHomeu: "Home",
+    navStoriau: "Storia",
+    navGalleriau: "Galleria",
+    footerContato: "Contatti",
+    footerDove: "Dove siamo",
+    endeText: "A due passi dal centro storico e dai terrazzamenti. Parcheggio limitato in loco.",
+    footerHora: "🕑 Orari indicativi: Gio–Lun 12:00–15:00 / 19:00–22:00 · Mar–Mer chiuso.",
+    footerText: "© 2025 Tre Fratelli — Tirano. Tutti i diritti riservati • Maria Luisa & Nathan Gabriel"
   },
   en: {
     navHome: "Home",
@@ -73,14 +81,22 @@ const TRANSLATIONS = {
     menuItem3: "Pizzoccheri",
     menuItem4: "Rustic cake",
     galleryTitle: "Gallery",
-    footerText: "© 2025 Tre Fratelli — Tirano. All rights reserved."
+    footerLinks:"Useful links",
+    navHomeu: "Home",
+    navStoriau: "History",
+    navGalleriau: "Gallery",
+    footerContato: "Contact",
+    footerDove: "Where to find us",
+    endeText:"Just a short walk from the historic centre and the terraced vineyards. Limited parking on site.",
+    footerHora:"🕑 Approximate opening hours: Thu–Mon 12:00–15:00 / 19:00–22:00 · Tue–Wed closed.",
+    footerText: "© 2025 Tre Fratelli — Tirano. All rights reserved • Maria Luisa & Nathan Gabriel"
   }
 };
 
 function applyTranslations(lang){
   const t = TRANSLATIONS[lang] || TRANSLATIONS.it;
   document.documentElement.lang = (lang === 'en') ? 'en' : 'it';
-  // map ids to translation keys
+  // mapA DE ids PARA "translation keys"
   const map = {
     "nav-home":"navHome","nav-storia":"navStoria","nav-cantina":"navCantina","nav-vini":"navVini","nav-ristorante":"navRistorante","nav-galleria":"navGalleria","nav-contatti":"navContatti",
     "hero-title":"heroTitle","hero-intro":"heroIntro",
@@ -92,7 +108,10 @@ function applyTranslations(lang){
     "ristorante-title":"ristoranteTitle","ristorante-intro":"ristoranteIntro","ristorante-menutitle":"ristoranteMenutitle","menu-title":"menuSampleTitle",
     "menu-item-1":"menuItem1","menu-obs":"menuObs", "menu-item-2":"menuItem2","menu-item-3":"menuItem3","menu-item-4":"menuItem4",
     "gallery-title":"galleryTitle",
-    "footer-text":"footerText"
+    "footer-links":"footerLinks",
+    "nav-homeu":"navHomeu","nav-storiau":"navStoriau","nav-galleriau":"navGalleriau",
+    "footer-dove":"footerDove","ende-text":"endeText",
+    "footer-contato":"footerContato","footer-hora":"footerHora","footer-text":"footerText"
   };
   Object.keys(map).forEach(id=>{
     const el=document.getElementById(id);
@@ -105,7 +124,7 @@ function applyTranslations(lang){
       el.textContent = t[key];
     }
   });
-  // active lang buttons
+  // BOTOES DO LANG (PARA TROCA DE IDIOMA)
   const btnIt = document.querySelector('[data-lang="it"]');
   const btnEn = document.querySelector('[data-lang="en"]');
   if(btnIt) btnIt.classList.toggle('active', lang==='it');
@@ -113,7 +132,7 @@ function applyTranslations(lang){
   localStorage.setItem('site_lang', lang);
 }
 
-// initialize
+// iniCIALIZA
 document.addEventListener('DOMContentLoaded',()=>{
   const saved = localStorage.getItem('site_lang') || 'it';
   applyTranslations(saved);
@@ -124,10 +143,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 
 
-
-
-
-
+/*GALERIA JS---*/
 
 const images = document.querySelectorAll('.gallery img');
 const modal = document.getElementById('modal');
