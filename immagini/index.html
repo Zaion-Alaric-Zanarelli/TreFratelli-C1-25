@@ -1,1 +1,437 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cantina e Ristorante Tre Fratelli — Tirano, Valtellina</title>
 
+  <style>
+.translate-btn {
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); 
+    color: white; 
+    font-weight: bold; 
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; 
+    font-family: Arial, sans-serif; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
+    margin-left: 10rem; 
+}
+
+.translate-btn img {
+    width: 24px; 
+    height: 24px; 
+}
+
+.translate-btn:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+    
+}
+
+.translate-btn:active {
+    transform: translateY(0); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
+}
+
+:root {
+  --bg: #faf7f2;
+  --ink: #332d29;
+  --accent: #7a4f2a;
+  --line: #e6ddd2; 
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #000; 
+  color: #ffbacd;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: #56070c; 
+  border-bottom: 1px solid var(--line); 
+  z-index: 10; 
+}
+
+.wrap {
+  max-width: 980px; 
+  margin: 0 auto; 
+  padding: 0 16px;
+}
+
+nav ul {
+  display: flex;
+  gap: 16px; 
+  list-style: none; 
+  padding: 12px 0; 
+  margin: 0;
+  flex-wrap: wrap; 
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+  color: #006414;
+}
+
+section {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+figure {
+  margin: 0;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .grid.two {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: #04d82eb2;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.muted {
+  color: #6b6058;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.95rem;
+}
+
+:target::before {
+  content: "";
+  display: block;
+  height: 60px;
+  margin-top: -60px;
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Navigazione principale">
+        <ul>
+          <li><a href="#storia"><span class="translatable" id="nav1">Storia</span></a></li>
+          <li><a href="#cantina"><span class="translatable" id="nav2">Cantina</span></a></li>
+          <li><a href="#vini"><span class="translatable" id="nav3">Vini</span></a></li>
+          <li><a href="#ristorante"><span class="translatable" id="nav4">Ristorante</span></a></li>
+          <li><a href="#galleria"><span class="translatable" id="nav5">Galleria</span></a></li>
+          <li><a href="#dove-siamo"><span class="translatable" id="nav6">Dove Siamo</span></a></li>
+          <li><a href="#contatti"><span class="translatable" id="nav7">Contatti</span></a></li>
+           <!-- Bottone per cambiare lingua -->
+          <button class="translate-btn" id="translateBtn">
+ <!-- Bandiera visualizzata nel bottone -->
+            <img id="flagImg" src="uk.png" alt="Flag">
+              
+
+          </button>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="home" class="hero">
+      <img src="proprieta.png" alt="Proprieta">
+     
+
+      <h1 id="hero-title">Cantina e Ristorante Tre Fratelli</h1>
+      <p id="hero-sub" class="muted">Quattro generazioni di famiglia, tra i muretti a secco della Valtellina e i profumi
+        della cucina di montagna.</p>
+    </section>
+
+    <section id="storia">
+      <h2 id="storia-title">La nostra storia</h2>
+      <div class="grid two">
+        <div class="card">
+          <p id="storia-p1">La <strong>Tre Fratelli</strong> affonda le sue radici nel 1925, quando Giovanni decise di
+            coltivare la <em>Chiavennasca</em> — il Nebbiolo di montagna — sui terrazzamenti che guardano Tirano. Tra
+            crisi economiche, guerra e rinascita del turismo alpino, la famiglia ha custodito una tradizione semplice:
+            <em>vino, ospitalità, lavoro di pietra e pazienza</em>.
+          </p>
+          <p id="storia-p2">Negli anni difficili, le botti furono protette in una piccola “cantina segreta” scavata
+            nella roccia; negli anni della ripresa, i nipoti hanno unito sapere contadino e studio enologico, senza mai
+            abbandonare i muretti a secco che tengono il monte.</p>
+          <p id="storia-p3">Oggi, la quarta generazione porta avanti la casa con la stessa idea: <strong>buon vino con
+              buona cucina</strong>, in un luogo che profuma di legno, pane e valle.</p>
+        </div>
+        <figure class="card"><img src="cantina.png" alt="Cantina"
+
+            style="width:100%; height:auto; border-radius:8px;"></figure>
+
+      </div>
+    </section>
+
+    <section id="cantina">
+      <h2 id="cantina-title">La cantina</h2>
+      <p id="cantina-p">Piccola, essenziale, scavata nella pietra. Fermentazioni controllate, affinamento in botti di
+        rovere e riposo lungo: la montagna chiede tempo e noi lo rispettiamo.</p>
+    </section>
+
+    <section id="vini">
+      <h2 id="vini-title">I nostri vini</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3 id="vini-linea-title">Linea Classica</h3>
+          <ul>
+            <li>
+              <strong>Valpolicella Tre Fratelli 2019</strong> —
+              <span class="translatable" id="vini-li1">
+                Rosso agile e conviviale (edizione ispirata, produzione limitata).
+              </span>
+            </li>
+            <li>
+              <strong>Tre Chardonnay 2022</strong> —
+              <span class="translatable" id="vini-li2">
+                Bianco fresco, mela e fiori di montagna.
+              </span>
+            </li>
+            <li>
+              <strong>Merlot Tre Fratelli 2020</strong> —
+              <span class="translatable" id="vini-li3">
+                Frutto maturo, note di cacao, tannino morbido.
+              </span>
+            </li>
+
+          </ul>
+          <p id="vini-p1" class="muted">*Etichette storiche della casa, nate come esercizi di stile per la ristorazione.
+          </p>
+        </div>
+        <figure class="card"> <img src="bottiglie.png" alt="Bottiglie"
+
+            style="width:100%; height:auto; border-radius:8px;">
+        </figure>
+      </div>
+      <div class="card" style="margin-top:16px;">
+        <h3 id="vini-montagna-title">Montagna & Tradizione</h3>
+        <p id="vini-montagna-p">Produzioni artigianali ispirate al carattere valtellinese: uve locali, vendemmia
+          manuale, affinamenti lenti. Ogni annata racconta il clima e il lavoro tra i terrazzamenti.</p>
+      </div>
+    </section>
+
+    <section id="ristorante">
+      <h2 id="ristorante-title">Il ristorante</h2>
+      <div class="grid two">
+        <figure class="card"><img src="facciata.png" alt="Facciata"
+
+            style="width:100%; height:auto; border-radius:8px;"></figure>
+
+        <div class="card">
+          <p id="ristorante-p1">La cucina è semplice e di valle: <strong>pizzoccheri</strong>, salumi e formaggi locali,
+            selvaggina quando la stagione lo permette, dolci della nonna.</p>
+          <p id="ristorante-p2"><em>Menu base (indicativo)</em>:</p>
+          <ul>
+            <li id="ristorante-li1">Piatto del giorno (primo o secondo) — € 12</li>
+            <li id="ristorante-li2">Tagliere valtellinese — € 10</li>
+            <li id="ristorante-li3">Pizzoccheri — € 11</li>
+            <li id="ristorante-li4">Torta rustica — € 5</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="galleria">
+      <h2 id="galleria-title">Galleria</h2>
+      <div class="grid two">
+        <figure class="card"><img src="proprieta.png" alt="Proprieta"
+
+            style="width:100%; height:auto; border-radius:8px;"></figure>
+        <figure class="card"><img src="cantina.png" alt="Cantina"
+
+            style="width:100%; height:auto; border-radius:8px;"></figure>
+      </div>
+    </section>
+
+    <section id="dove-siamo">
+      <h2 id="dove-title">Dove siamo</h2>
+      <p id="dove-p1"><strong>Indirizzo:</strong> Via S. Stefano, 55 — 28087 Tirano (SO), Italia</p>
+      <p id="dove-p2" class="muted">A due passi dal centro storico e dai terrazzamenti. Parcheggio limitato in loco.</p>
+    </section>
+
+    <section id="contatti">
+      <h2 id="contatti-title">Contatti</h2>
+      <p id="contatti-p1">Email: <a href="mailto:info@trefratelli.example">info@trefratelli.example</a> · Telefono: +39
+        000 000 000</p>
+      <p id="contatti-p2" class="muted">Orari indicativi: Gio–Lun 12:00–15:00 / 19:00–22:00 · Mar–Mer chiuso.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p id="footer-p">© 2025 Cantina e Ristorante Tre Fratelli · Sito dimostrativo non commerciale.</p>
+    </div>
+    <script>// Oggetto contenente tutte le traduzioni del sito
+// Ogni chiave rappresenta un elemento della pagina, con le traduzioni in italiano ("it") e inglese ("en")
+const translations = {
+
+  // Traduzioni per la navigazione
+  "nav1": { "it": "Storia", "en": "History" },
+  "nav2": { "it": "Cantina", "en": "Cellar" },
+  "nav3": { "it": "Vini", "en": "Wines" },
+  "nav4": { "it": "Ristorante", "en": "Restaurant" },
+  "nav5": { "it": "Galleria", "en": "Gallery" },
+  "nav6": { "it": "Dove Siamo", "en": "Where We Are" },
+  "nav7": { "it": "Contatti", "en": "Contacts" },
+
+  // Traduzioni sezione hero (titolo principale e sottotitolo)
+  "hero-title": { "it": "Cantina e Ristorante Tre Fratelli", "en": "Tre Fratelli Winery and Restaurant" },
+  "hero-sub": { 
+    "it": "Quattro generazioni di famiglia, tra i muretti a secco della Valtellina e i profumi della cucina di montagna.", 
+    "en": "Four generations of family, among the dry stone walls of Valtellina and the scents of mountain cuisine." 
+  },
+
+  // Traduzioni sezione storia
+  "storia-title": { "it": "La nostra storia", "en": "Our Story" },
+  "storia-p1": { 
+    "it": "La Tre Fratelli affonda le sue radici nel 1925, quando Giovanni decise di coltivare la Chiavennasca — il Nebbiolo di montagna — sui terrazzamenti che guardano Tirano. Tra crisi economiche, guerra e rinascita del turismo alpino, la famiglia ha custodito una tradizione semplice: vino, ospitalità, lavoro di pietra e pazienza.",
+    "en": "Tre Fratelli has its roots in 1925, when Giovanni decided to cultivate Chiavennasca — the mountain Nebbiolo — on the terraces overlooking Tirano. Through economic crises, war, and the revival of alpine tourism, the family preserved a simple tradition: wine, hospitality, stonework, and patience." 
+  },
+  "storia-p2": { 
+    "it": "Negli anni difficili, le botti furono protette in una piccola “cantina segreta” scavata nella roccia; negli anni della ripresa, i nipoti hanno unito sapere contadino e studio enologico, senza mai abbandonare i muretti a secco che tengono il monte.",
+    "en": "In difficult years, the barrels were protected in a small “secret cellar” carved into the rock; in the recovery years, the grandchildren combined farming knowledge with oenology studies, never abandoning the dry stone walls that hold the mountain." 
+  },
+  "storia-p3": { 
+    "it": "Oggi, la quarta generazione porta avanti la casa con la stessa idea: buon vino con buona cucina, in un luogo che profuma di legno, pane e valle.",
+    "en": "Today, the fourth generation carries on with the same vision: good wine with good food, in a place scented with wood, bread, and valley air." 
+  },
+
+  // Traduzioni sezione cantina
+  "cantina-title": { "it": "La cantina", "en": "The Cellar" },
+  "cantina-p": { 
+    "it": "Piccola, essenziale, scavata nella pietra. Fermentazioni controllate, affinamento in botti di rovere e riposo lungo: la montagna chiede tempo e noi lo rispettiamo.",
+    "en": "Small, essential, carved into the stone. Controlled fermentations, oak barrel aging, and long resting: the mountains require time, and we respect it." 
+  },
+
+  // Traduzioni sezione vini
+  "vini-title": { "it": "I nostri vini", "en": "Our Wines" },
+  "vini-linea-title": { "it": "Linea Classica", "en": "Classic Line" },
+  "vini-li1": { "it": "Rosso agile e conviviale (edizione ispirata, produzione limitata).", "en": "Light and approachable red (inspired edition, limited production)." },
+  "vini-li2": { "it": "Bianco fresco, mela e fiori di montagna.", "en": "Fresh white, apple and mountain flowers." },
+  "vini-li3": { "it": "Frutto maturo, note di cacao, tannino morbido.", "en": "Ripe fruit, cocoa notes, soft tannin." },
+  "vini-p1": { "it": "*Etichette storiche della casa, nate come esercizi di stile per la ristorazione.", "en": "*Historic house labels, created as stylistic exercises for the restaurant." },
+  "vini-montagna-title": { "it": "Montagna & Tradizione", "en": "Mountain & Tradition" },
+  "vini-montagna-p": { "it": "Produzioni artigianali ispirate al carattere valtellinese: uve locali, vendemmia manuale, affinamenti lenti. Ogni annata racconta il clima e il lavoro tra i terrazzamenti.",
+                        "en": "Artisanal productions inspired by Valtellina character: local grapes, manual harvest, slow aging. Each vintage tells the climate and work among the terraces." },
+
+  // Traduzioni sezione ristorante
+  "ristorante-title": { "it": "Il ristorante", "en": "The Restaurant" },
+  "ristorante-p1": { "it": "La cucina è semplice e di valle: pizzoccheri, salumi e formaggi locali, selvaggina quando la stagione lo permette, dolci della nonna.", "en": "The cuisine is simple and local: pizzoccheri, cured meats and local cheeses, game when in season, grandma's desserts." },
+  "ristorante-p2": { "it": "Menu base (indicativo):", "en": "Basic menu (indicative):" },
+  "ristorante-li1": { "it": "Piatto del giorno (primo o secondo) — € 12", "en": "Dish of the day (first or second course) — € 12" },
+  "ristorante-li2": { "it": "Tagliere valtellinese — € 10", "en": "Valtellina platter — € 10" },
+  "ristorante-li3": { "it": "Pizzoccheri — € 11", "en": "Pizzoccheri — € 11" },
+  "ristorante-li4": { "it": "Torta rustica — € 5", "en": "Rustic cake — € 5" },
+
+  // Traduzioni sezione dove siamo
+  "dove-title": { "it": "Dove siamo", "en": "Where We Are" },
+  "dove-p1": { "it": "Indirizzo: Via S. Stefano, 55 — 28087 Tirano (SO), Italia", "en": "Address: Via S. Stefano, 55 — 28087 Tirano (SO), Italy" },
+  "dove-p2": { "it": "A due passi dal centro storico e dai terrazzamenti. Parcheggio limitato in loco.", "en": "A short walk from the historic centre and terraces. Limited on-site parking." },
+
+  // Traduzioni sezione contatti
+  "contatti-title": { "it": "Contatti", "en": "Contacts" },
+  "contatti-p1": { "it": "Email: info@trefratelli.example · Telefono: +39 000 000 000", "en": "Email: info@trefratelli.example · Phone: +39 000 000 000" },
+  "contatti-p2": { "it": "Orari indicativi: Gio–Lun 12:00–15:00 / 19:00–22:00 · Mar–Mer chiuso.", 
+                    "en": "Indicative opening hours: Thu–Mon 12:00–15:00 / 19:00–22:00 · Tue–Wed closed." },
+
+  // Traduzioni footer
+  "footer-p": { "it": "© 2025 Cantina e Ristorante Tre Fratelli · Sito dimostrativo non commerciale.",
+                "en": "© 2025 Tre Fratelli Winery and Restaurant · Demonstration site only." }
+};
+
+// Variabile che mantiene la lingua corrente della pagina, di default italiano
+let currentLang = "it";
+
+// Funzione che applica il testo tradotto a un elemento DOM
+function setTranslation(id, text) {
+  const el = document.getElementById(id); // recupera l'elemento tramite id
+  if (el) {
+    el.textContent = text; // aggiorna il contenuto testuale
+  }
+}
+
+// Funzione per cambiare lingua tra italiano e inglese
+function toggleTranslate() {
+  const targetLang = currentLang === "it" ? "en" : "it"; // determina la lingua da impostare
+
+  // Cicla su tutte le chiavi delle traduzioni e aggiorna gli elementi corrispondenti
+  for (const id in translations) {
+    if (translations[id][targetLang]) {
+      setTranslation(id, translations[id][targetLang]);
+    }
+  }
+
+  // Aggiorna anche il pulsante e l'immagine della bandiera
+  const btnText = document.getElementById('btnText'); 
+  const flagImg = document.getElementById('flagImg');
+
+  if (targetLang === "en") {
+    btnText.textContent = "Translate to Italian"; // testo pulsante se la lingua corrente è inglese
+    flagImg.src = "it.png"; // cambia immagine bandiera
+  } else {
+    btnText.textContent = "Translate to English (UK)"; // testo pulsante se lingua corrente è italiano
+    flagImg.src = "uk.png"; // cambia immagine bandiera
+  }
+
+  currentLang = targetLang; // aggiorna variabile lingua corrente
+}
+
+// Al caricamento del DOM, inizializza il pulsante di traduzione
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById('translateBtn'); // seleziona pulsante
+  const img = document.getElementById('flagImg'); // seleziona immagine bandiera
+
+  // Se il pulsante non contiene ancora lo span con id 'btnText', lo crea
+  if (!btn.querySelector('#btnText')) {
+    const span = document.createElement('span');
+    span.id = "btnText";
+    span.textContent = "Translate to English (UK)"; // testo iniziale pulsante
+    btn.insertBefore(span, img); // inserisce lo span prima dell'immagine
+  }
+
+  // Aggiunge listener per click sul pulsante che chiama toggleTranslate
+  btn.addEventListener('click', toggleTranslate);
+});
+
+</script>
+  </footer>
+</body>
+
+</html>
